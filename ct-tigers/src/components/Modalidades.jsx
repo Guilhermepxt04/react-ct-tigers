@@ -5,14 +5,15 @@ import ImgPersonal from '../assets/img/personal.webp'
 import ImgKrav from '../assets/img/krav.webp'
 import ImgBoxe from '../assets/img/boxe.webp'
 import CardProps from "./CardProps";
+import Reveal from "./Reveal";
 
 export default function Modalidades() {
     return (
         <section id="modalidades" className={`${Style.planos} secao corte-b`}>
 
-            <div className={Style.topo}>
+            <Reveal className={Style.topo}>
                 <h2>Nossas modalidades</h2>
-            </div>
+            </Reveal>
 
             <div className={Style.cards}>
                 <CardProps
@@ -52,7 +53,7 @@ export default function Modalidades() {
                 />
             </div>
 
-            <div className={Style.fecho}>
+            <Reveal className={Style.fecho}>
                 <p>Escolha a modalidade que combina com você e comece com uma aula gratuita.</p>
                 <a
                     className="btn"
@@ -62,7 +63,7 @@ export default function Modalidades() {
                 >
                     Agendar aula grátis
                 </a>
-            </div>
+            </Reveal>
 
         </section>
     )

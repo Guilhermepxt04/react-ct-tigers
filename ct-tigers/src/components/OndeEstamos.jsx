@@ -1,10 +1,11 @@
 import React from "react";
 import Style from '../components/css/OndeEstamos.module.css'
+import Reveal from "./Reveal";
 
 export default function OndeEstamos() {
     return (
         <section id="ondeEstamos" className={`${Style.ondeEstamos} secao corte-b`}>
-            <div className={Style.container}>
+            <Reveal className={Style.container}>
 
                 <div className={Style.texto}>
                     <h2>Onde estamos</h2>
@@ -30,7 +31,7 @@ export default function OndeEstamos() {
                     loading="lazy"
                 ></iframe>
 
-            </div>
+            </Reveal>
         </section>
     )
 }

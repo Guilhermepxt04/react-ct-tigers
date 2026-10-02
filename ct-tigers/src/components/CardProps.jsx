@@ -1,9 +1,12 @@
 import React from "react";
 import Style from '../components/css/Modalidades.module.css';
+import Reveal from "./Reveal";
 
+// O Reveal é a própria "linha" (.card), então continua sendo filho direto de .cards
+// e o layout alternado (nth-child(even)) segue funcionando.
 export default function CardProps({ img, altImg, titulo, texto, lista1, lista2, lista3 }) {
     return (
-        <article className={Style.card}>
+        <Reveal className={Style.card}>
             <div className={Style.imagem}>
                 <img src={img} alt={altImg || titulo} loading="lazy" />
             </div>
@@ -17,6 +20,6 @@ export default function CardProps({ img, altImg, titulo, texto, lista1, lista2, 
                     <li>{lista3}</li>
                 </ul>
             </div>
-        </article>
+        </Reveal>
     )
 }

@@ -1,11 +1,12 @@
 import React from 'react'
 import Style from '../components/css/Marcelo.module.css'
 import Image from '../assets/img/marcelo.webp'
+import Reveal from './Reveal'
 
 export default function Marcelo() {
     return (
         <section id="marcelo" className={`${Style.marcelo} secao corte-a`}>
-            <div className={Style.container}>
+            <Reveal className={Style.container}>
 
                 <div className={Style.imagem}>
                     <img src={Image} alt="Instrutor Marcelo Carvalho" loading="lazy" />
@@ -29,7 +30,7 @@ export default function Marcelo() {
                     <a href="#modalidades" className="btn">Conheça as modalidades</a>
                 </div>
 
-            </div>
+            </Reveal>
         </section>
     )
 }

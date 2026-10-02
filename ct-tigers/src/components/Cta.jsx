@@ -1,10 +1,11 @@
 import React from "react";
 import Style from '../components/css/Cta.module.css'
+import Reveal from "./Reveal";
 
 export default function Cta() {
     return (
         <section className={`${Style.cta} secao corte-a`}>
-            <div className={Style.conteudo}>
+            <Reveal className={Style.conteudo}>
                 <h2>Pronto para começar seus treinos?</h2>
                 <p>Agende sua primeira aula experimental gratuita e descubra seu verdadeiro potencial.</p>
                 <a
@@ -15,7 +16,7 @@ export default function Cta() {
                 >
                     Agendar aula grátis
                 </a>
-            </div>
+            </Reveal>
         </section>
     )
 }

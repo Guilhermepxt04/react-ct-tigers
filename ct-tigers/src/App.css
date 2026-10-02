@@ -82,8 +82,8 @@ img {
     outline-offset: 4px;
 }
 
+/* Reduz só as animações automáticas; transições de clique e scroll continuam */
 @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
     *, *::before, *::after {
         animation: none !important;
     }
