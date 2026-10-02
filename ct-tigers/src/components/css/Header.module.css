@@ -1,36 +1,55 @@
 .nav {
-
     position: fixed;
-    width: 100%;
+    inset: 0 0 auto 0;
+    z-index: 20;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    text-align: center;
-    background-color: #000;
-    border-bottom: solid 1px #fff;
-    z-index: 20;
+    padding: 10px var(--pad-x);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .85), rgba(0, 0, 0, .55));
+}
 
-    & a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.5em;
-        transition: 1s all;
-        font-weight: bolder;
-    }
+.logoLink {
+    display: block;
+    line-height: 0;
+}
 
-    & a:hover {
-        color: #EB1C24;
-        transition: .3s all;
-    }
+.logo {
+    width: 48px;
+    height: auto;
+    display: block;
+}
 
-    & .logo {
-        display: block;
-        padding: 0px 0px 0px 60px;
-        width: 60px;
-        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-    }
+.menuNav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
 
+.menuNav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: .4rem 0;
+    background: linear-gradient(var(--red), var(--red)) 0 100% / 0 3px no-repeat;
+    transition: background-size .3s ease;
+}
+
+.menuNav a:hover {
+    background-size: 100% 3px;
+}
+
+.menuNav a.contato {
+    background: var(--red);
+    padding: .6rem 1.3rem;
+    border-radius: 999px;
+    transition: background .25s ease, transform .25s ease;
+}
+
+.menuNav a.contato:hover {
+    background: var(--red-hot);
+    transform: translateY(-2px);
 }
 
 .hamburger {
@@ -40,22 +59,22 @@
     width: 2.5rem;
     height: 2.5rem;
     background: transparent;
-    border: none;
     cursor: pointer;
-    padding: 0;
-    z-index: 10;
+    position: relative;
+    z-index: 22;
 }
 
 .bar {
+    display: block;
     width: 2rem;
-    height: 0.25rem;
+    height: .25rem;
     background-color: #fff;
     border-radius: 10px;
-    transition: all 0.3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 .aberto .bar:nth-child(1) {
-    transform: translateY(0.7rem) translateX(0.2rem) rotate(45deg);
+    transform: translateY(.7rem) translateX(.2rem) rotate(45deg);
 }
 
 .aberto .bar:nth-child(2) {
@@ -63,75 +82,40 @@
 }
 
 .aberto .bar:nth-child(3) {
-    transform: translateY(-0.9rem) translateX(0.2rem) rotate(-45deg);
+    transform: translateY(-.9rem) translateX(.2rem) rotate(-45deg);
 }
-
-.menuNav {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin-right: 5%;
-}
-
 
 @media (max-width: 1080px) {
-
-    .nav {
-        padding: 5px 0;
-        & .logo {
-            width: 40px;
-            padding: 0px 0px 0px 30px;
-        }
-
-        & a {
-            display: none;
-        }
-    }
-
-
     .hamburger {
         display: flex;
-        position: fixed;
-        right: 2rem;
-        z-index: 22;
     }
 
-
     .menuNav {
-        display: flex;
+        position: fixed;
+        inset: 0;
+        height: 100vh;
+        height: 100dvh;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100%;
-        background-color: #111;
-        transition: transform 0.3s ease-in-out;
-        transform-origin: right;
-        transform: scaleX(0);
+        gap: 1.4rem;
+        background: rgba(0, 0, 0, .97);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .3s ease, visibility .3s ease;
+        z-index: 21;
     }
 
     .menuAberto {
-        transform: scaleX(0.8);
+        opacity: 1;
+        visibility: visible;
     }
 
     .menuNav a {
-        display: block;
-        color: #fff;
-        font-size: 1.5rem;
-        margin: 1.5rem 0;
+        font-size: 1.8rem;
     }
 
-}
-
-@media (max-width: 768px) {
-
-    .nav {
-        & .logo {
-            width: 40px;
-        }
+    .menuNav a.contato {
+        font-size: 1.3rem;
+        margin-top: 1rem;
     }
-    
 }

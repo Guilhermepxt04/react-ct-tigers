@@ -1,56 +1,54 @@
 import React from "react";
-import { motion } from "framer-motion";
 import Style from '../components/css/Horarios.module.css'
+
+const grade = [
+    {
+        dia: "Segunda e Quarta",
+        aulas: [
+            { hora: "18:30 – 19:30", modalidade: "Boxe" },
+            { hora: "19:30 – 20:30", modalidade: "Muay Thai Kids" },
+            { hora: "20:30 – 21:30", modalidade: "Muay Thai" },
+        ],
+    },
+    {
+        dia: "Terça e Quinta",
+        aulas: [
+            { hora: "19:30 – 21:30", modalidade: "Krav Maga" },
+        ],
+    },
+    {
+        dia: "Sábado e Domingo",
+        aulas: [
+            { hora: "08:00 – 10:00", modalidade: "Krav Maga" },
+            { hora: "10:30 – 12:30", modalidade: "Krav Maga" },
+        ],
+    },
+];
 
 export default function Horarios() {
     return (
-        <section id="horarios" className={Style.horarios}>
+        <section id="horarios" className={`${Style.horarios} secao corte-a`}>
 
+            <div className={Style.intro}>
+                <h2>Nossos horários</h2>
+                <p>Faça uma aula experimental em qualquer modalidade. Se preferir, marque um personal no melhor horário para a sua rotina.</p>
+            </div>
 
-            <motion.div
-                initial={{ opacity: 0, translateY: "20%" }}
-                whileInView={{ opacity: 1, translateY: "0%" }}
-                transition={{ duration: 0.6 }}>
-                <h2>Nossos <span>Horários</span></h2>
-                <p>Nosso cronograma atual de aulas, não se esqueça que pode fazer uma aula experimental nas modalidades e também pode marcar um personal no melhor horário para a sua rotina</p>
-            </motion.div>
-
-            <motion.table className={Style.table}
-                initial={{ opacity: 0, translateY: "20%" }}
-                whileInView={{ opacity: 1, translateY: "0%" }}
-                transition={{ duration: 0.6 }}>
-                <thead>
-                    <tr>
-                        <th>Dia da Semana</th>
-                        <th>Horário</th>
-                        <th>Modalidade</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td rowspan="3">Terça e Quinta</td>
-                        <td>18:30 - 19:30</td>
-                        <td>Boxe</td>
-                    </tr>
-                    <tr>
-                        <td>19:30 - 20:30</td>
-                        <td>Muay-Thai Kids</td>
-                    </tr>
-                    <tr>
-                        <td>20:30 - 21:30</td>
-                        <td>Muay-Thai</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2">Sábado e Domingo</td>
-                        <td>08:00 - 10:00</td>
-                        <td>Krav Maga</td>
-                    </tr>
-                    <tr>
-                        <td>10:30 - 12:30</td>
-                        <td>Krav Maga</td>
-                    </tr>
-                </tbody>
-            </motion.table>
+            <div className={Style.grade}>
+                {grade.map((grupo) => (
+                    <div className={Style.grupo} key={grupo.dia}>
+                        <h3>{grupo.dia}</h3>
+                        <ul>
+                            {grupo.aulas.map((aula) => (
+                                <li key={aula.hora}>
+                                    <span className={Style.hora}>{aula.hora}</span>
+                                    <span className={Style.modalidade}>{aula.modalidade}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </div>
 
         </section>
     )

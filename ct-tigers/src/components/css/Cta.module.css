@@ -1,51 +1,51 @@
 .cta {
+    background: linear-gradient(115deg, var(--red) 0%, #c9131a 100%);
+    color: #fff;
+    padding: var(--respiro) var(--pad-x);
+}
+
+.conteudo {
     display: flex;
     flex-direction: column;
-    background-color: red;
-    align-items: center;
+    align-items: flex-start;
+    gap: 1.6rem;
+    max-width: 1200px;
+    margin-inline: auto;
+}
 
-    & div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0px 20px 20px;
-        gap: 20px;
+.conteudo h2 {
+    max-width: 14ch;
+    font-family: var(--display);
+    font-weight: 400;
+    text-align: left;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: clamp(3rem, 10vw, 8.5rem);
+    line-height: .9;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, .25);
+}
 
+.conteudo p {
+    max-width: 40ch;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    line-height: 1.5;
+    color: rgba(255, 255, 255, .92);
+}
 
-        & h1 {
-            font-family: Impact;
-            font-size: 5em;
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            color: #Fff;
-        }
+.botao {
+    display: inline-block;
+    padding: 1.1rem 2.4rem;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--red);
+    font-weight: 800;
+    font-size: 1.15rem;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
 
-        & p {
-            color: #Fff;
-            font-size: 2em;
-            text-align: center;
-        }
-
-        & button {
-            width: fit-content;
-            white-space: nowrap;
-            border-radius: 10px;
-            font-weight: bold;
-            padding: 40px;
-            box-shadow: 0 0 15px 5px rgba(252, 252, 252, 0.3);
-            transition: .3s all;
-            font-size: 1.7em;
-            text-decoration: none;
-            text-align: center;
-
-            & a {
-                text-decoration: none;
-                color: #ff0000;
-            }
-        }
-
-        & button:hover {
-                transform: scale(1.1);
-            }
-    }
+.botao:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, .3);
 }

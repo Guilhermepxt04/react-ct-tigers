@@ -1,117 +1,169 @@
 .planos {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    background-color: #000000;
-    align-items: center;
+    background: #000;
     color: #fff;
-    padding: 50px 20px;
-
-    & span {
-        color: #fff;
-    }
-
-    & .cards {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 50px;
-        padding: 30px 0;
-
-        & .card {
-            display: flex;
-            flex-direction: column;
-            width: 350px;
-            background-color: #1c1c1c;
-            transition: .3s all;
-            border-radius: 10px;
-            overflow: hidden;
-            text-align: left;
-            will-change: transform;
-
-            & img {
-                height: 300px;
-            }
-
-            & .cardConteudo {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
-                padding: 30px;
-
-                & h3 {
-                    color: #ffffff;
-                    font-size: 1.8em;
-                }
-
-                & p {
-                    font-size: 1em;
-                    color: #ccc;
-                    line-height: 1.5;
-                }
-
-                & ul {
-                    list-style: none;
-                    width: 100%;
-
-                    & li {
-                        color: #ccc;
-                        line-height: 1.6;
-                    }
-
-                    & li::before {
-                        content: "\2022";
-                        color: #EB1C24;
-                        font-weight: bold;
-                        display: inline-block;
-                        margin-right: 10px;
-                    }
-                }
-            }
-        }
-
-        & .card:hover {
-            transform: scale(1.05);
-            border: 1px solid #EB1C24;
-        }
-    }
-
-    & button {
-        width: fit-content;
-        white-space: nowrap;
-        border-radius: 10px;
-        font-weight: bold;
-        padding: 40px;
-        box-shadow: 0 0 15px 5px rgba(252, 252, 252, 0.3);
-        transition: .3s all;
-        font-size: 1.8em;
-        text-decoration: none;
-        text-align: center;
-
-        & a {
-            text-decoration: none;
-            color: #ff0000;
-        }
-    }
-
-    & button:hover {
-        transform: scale(1.1);
-    }
+    padding: var(--respiro) var(--pad-x);
 }
 
-@media (max-width: 768px) {
+.topo,
+.cards,
+.fecho {
+    max-width: 1200px;
+    margin-inline: auto;
+}
 
-    .planos {
+.topo h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    text-align: left;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: clamp(2.6rem, 7vw, 6rem);
+    line-height: .95;
+}
 
-        & button {
-            padding: 30px;
-            font-size: 1.3em;
-        }
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 6vw, 5rem);
+    margin-top: clamp(2rem, 5vw, 4rem);
+}
 
+.card {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: center;
+}
+
+.imagem img {
+    display: block;
+    width: 100%;
+    height: clamp(240px, 34vw, 430px);
+    object-fit: cover;
+    -webkit-mask-image: linear-gradient(to right, #000 55%, transparent 100%);
+    mask-image: linear-gradient(to right, #000 55%, transparent 100%);
+    transition: transform .6s ease;
+}
+
+.card:hover .imagem img {
+    transform: scale(1.03);
+}
+
+.imagem {
+    overflow: hidden;
+}
+
+.cardConteudo {
+    position: relative;
+    z-index: 1;
+    margin-left: -14%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.1rem;
+}
+
+.cardConteudo h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: clamp(2rem, 4.6vw, 3.8rem);
+    line-height: 1;
+    color: #fff;
+}
+
+.cardConteudo p {
+    max-width: 44ch;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #cfcfcf;
+}
+
+.cardConteudo ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1.4rem;
+}
+
+.cardConteudo li {
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.cardConteudo li::before {
+    content: "";
+    width: 14px;
+    height: 3px;
+    background: var(--red);
+    transform: skewX(-30deg);
+}
+
+/* linhas pares espelham o layout */
+.card:nth-child(even) .imagem {
+    order: 2;
+}
+
+.card:nth-child(even) .imagem img {
+    -webkit-mask-image: linear-gradient(to left, #000 55%, transparent 100%);
+    mask-image: linear-gradient(to left, #000 55%, transparent 100%);
+}
+
+.card:nth-child(even) .cardConteudo {
+    margin-left: 0;
+    margin-right: -14%;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.card:nth-child(even) .cardConteudo ul {
+    justify-content: flex-end;
+}
+
+.fecho {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem 3rem;
+    margin-top: clamp(3rem, 7vw, 6rem);
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, .18);
+}
+
+.fecho p {
+    max-width: 38ch;
+    font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+    line-height: 1.35;
+    font-weight: 700;
+}
+
+@media (max-width: 800px) {
+    .card,
+    .card:nth-child(even) {
+        grid-template-columns: 1fr;
     }
 
+    .card:nth-child(even) .imagem {
+        order: 0;
+    }
 
+    .imagem img,
+    .card:nth-child(even) .imagem img {
+        -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+        mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+    }
+
+    .cardConteudo,
+    .card:nth-child(even) .cardConteudo {
+        margin: -3.5rem 0 0;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .card:nth-child(even) .cardConteudo ul {
+        justify-content: flex-start;
+    }
 }

@@ -11,28 +11,21 @@ import Footer from './components/Footer';
 import './App.css'
 
 export default function App() {
-
   return (
-<>
-    <header>
+    <>
       <Header />
-    </header>
 
-    <main>  
-      <Hero />
-      <Marcelo />
-      <Modalidades />
-      <Horarios />
-      <OndeEstamos />
-      <Cta />
+      <main>
+        <Hero />
+        <Marcelo />
+        <Modalidades />
+        <Horarios />
+        <OndeEstamos />
+        <Cta />
+      </main>
 
-    </main>
-
-    <footer>
       <Footer />
-    </footer>
-
-    <Whatsapp />
-</>
+      <Whatsapp />
+    </>
   )
 }

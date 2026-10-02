@@ -1,65 +1,71 @@
 .ondeEstamos {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    background-color: #000000;
-    align-items: center;
-    padding: 50px 20px;
-    gap: 30px;
-
-    & div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        flex-wrap: wrap;
-
-        & span {
-            color: #Fff;
-        }
-
-        & h2 {
-            font-size: 3.5em;
-        }
-
-        & p {
-            width: 60%;
-            color: #fff;
-            font-size: 2em;
-        }
-
-        & a {
-            & iframe {
-                width: 500px;
-                height: 500px;
-                border-radius: 10px;
-            }
-        }
-    }
-
+    background: #000;
+    color: #fff;
+    padding: var(--respiro) var(--pad-x);
 }
 
-@media (max-width: 768px) {
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5rem);
+    max-width: 1200px;
+    margin-inline: auto;
+}
 
-    .ondeEstamos {
+.texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+}
 
-        & div {
-            p {
-                width: 100%;
-                font-size: 1.5em;
-            }
+.texto h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    text-align: left;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: clamp(2.6rem, 6.5vw, 5.5rem);
+    line-height: .95;
+}
 
-            & a {
-                & iframe {
-                    width: 370px;
-                    height: 370px;
-                }
-            }
-        }
+.texto p {
+    max-width: 42ch;
+    font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+    line-height: 1.6;
+    color: #d0d0d0;
+}
 
+.texto address {
+    font-style: normal;
+    line-height: 1.6;
+    padding-left: 1rem;
+    border-left: 3px solid var(--red);
+    color: #fff;
+    font-weight: 600;
+}
 
+.mapa {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    border-radius: 5rem 1rem 5rem 1rem;
+    filter: grayscale(1) contrast(1.05) brightness(.92);
+    transition: filter .5s ease;
+}
+
+.mapa:hover {
+    filter: none;
+}
+
+@media (max-width: 800px) {
+    .container {
+        grid-template-columns: 1fr;
     }
 
-
+    .mapa {
+        aspect-ratio: 4 / 3;
+        border-radius: 3rem 1rem 3rem 1rem;
+    }
 }
