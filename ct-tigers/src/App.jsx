@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { MotionConfig } from 'framer-motion';
+import { LazyMotion, domAnimation, MotionConfig } from 'framer-motion';
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Marcelo from './components/Marcelo';
@@ -41,6 +41,7 @@ export default function App() {
   }, []);
 
   return (
+    <LazyMotion features={domAnimation}>
     <MotionConfig reducedMotion="user">
       <Header />
 
@@ -56,5 +57,6 @@ export default function App() {
       <Footer />
       <Whatsapp />
     </MotionConfig>
+    </LazyMotion>
   )
 }

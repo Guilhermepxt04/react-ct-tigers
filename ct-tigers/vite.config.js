@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     react(),
     sitemap({ 
-      hostname: 'https://kravmagatigers.com.br'
+      hostname: 'https://www.kravmagatigers.com.br'
     })
   ],
 })

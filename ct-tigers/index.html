@@ -1,25 +1,76 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="shortcut icon" href="https://www.kravmagatigers.com.br/logo.ico" type="image/x-icon">
-  <link rel="icon" href="https://www.kravmagatigers.com.br/logo.ico" type="image/x-icon">
-  <link rel="preload" as="image" href="/src/assets/img/marcelo-banner.webp">
-  <link rel="preload" as="font" type="font/woff2" href="/src/assets/fonts/IMPACT.wolff2" crossorigin>
-  <link rel="canonical" href="https://www.kravmagatigers.com.br/" />
-  <meta http-equiv="content-language" content="pt-br" />
-  <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="keywords"
-    content="krav maga, academia de krav maga, kravmaga, defesa pessoal, defesa pessoal feminina, muay thai, boxe, personal figth, krav maga zona leste, centro de treinamento tigers, krav maga tigers">
-  <meta name="description" content="Academia e personal com aulas de krav maga, boxe, muay thai">
+
+  <title>Krav Maga, Muay Thai e Boxe em Guaianases | Krav Maga Tigers</title>
+  <meta name="description" content="Aulas de Krav Maga, Muay Thai e Boxe em Guaianases, Zona Leste de São Paulo. Aula experimental grátis e personal no Tatuapé e Anália Franco.">
   <meta name="author" content="Guilherme Peixoto Carvalho">
-  <meta property="og:title" content="Krav Maga Tigers">
-  <meta property="og:description" content="Centro de treinamento e personal com aulas de krav maga, boxe, muay thai">
-  <meta property="og:image" content="https://www.kravmagatigers.com.br/logo.ico" />
-  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#EB1C24">
+  <link rel="canonical" href="https://www.kravmagatigers.com.br/" />
+
+  <link rel="icon" href="/logo.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/logo.ico" type="image/x-icon">
+
+  <!-- Open Graph / Redes sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Krav Maga Tigers">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://www.kravmagatigers.com.br/">
+  <meta property="og:title" content="Krav Maga Tigers - Krav Maga, Muay Thai e Boxe em Guaianases">
+  <meta property="og:description" content="Centro de treinamento e personal com aulas de Krav Maga, Boxe e Muay Thai. Faça uma aula experimental grátis.">
+  <meta property="og:image" content="https://www.kravmagatigers.com.br/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Krav Maga Tigers - Centro de Treinamento em Guaianases">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Dados estruturados: negócio local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "Krav Maga Tigers - Centro de Treinamento Tigers",
+    "url": "https://www.kravmagatigers.com.br/",
+    "image": "https://www.kravmagatigers.com.br/og.jpg",
+    "telephone": "+5511953997087",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. dos Bandeirantes, 236",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "postalCode": "08421-135",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.5593913,
+      "longitude": -46.4238427
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Thursday"],
+        "opens": "18:30",
+        "closes": "21:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "08:00",
+        "closes": "12:30"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/kravmaga_instrutormarcelo",
+      "https://www.tiktok.com/@marcelocarvalho_tigers"
+    ]
+  }
+  </script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y83XWK2QHR"></script>
   <script>
@@ -29,14 +80,12 @@
 
     gtag('config', 'G-Y83XWK2QHR');
   </script>
-
-  <title>Centro de Treinamento Tigers - Krav Maga, Muay Thai, Boxe e Personal em São Paulo</title>
 </head>
-
 
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
     <div vw-plugin-wrapper>
@@ -44,12 +93,13 @@
     </div>
   </div>
 
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script defer>
-    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  <!-- VLibras carregado sem bloquear a página -->
+  <script defer src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    });
   </script>
-
-
 </body>
 
 </html>

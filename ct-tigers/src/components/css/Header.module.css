@@ -64,6 +64,13 @@
     z-index: 22;
 }
 
+/* amplia a área de toque para 48px sem mudar o visual */
+.hamburger::before {
+    content: "";
+    position: absolute;
+    inset: -.25rem;
+}
+
 .bar {
     display: block;
     width: 2rem;

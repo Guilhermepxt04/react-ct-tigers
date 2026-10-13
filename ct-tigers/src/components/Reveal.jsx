@@ -1,9 +1,10 @@
 import React from "react";
-import { motion as Motion } from "framer-motion";
+import { m as M } from "framer-motion";
 
+// Usa o componente leve "m" (precisa do LazyMotion no App.jsx)
 export default function Reveal({ children, delay = 0, className }) {
     return (
-        <Motion.div
+        <M.div
             className={className}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -11,6 +12,6 @@ export default function Reveal({ children, delay = 0, className }) {
             transition={{ duration: 0.7, delay, ease: [0.2, 0.7, 0.2, 1] }}
         >
             {children}
-        </Motion.div>
+        </M.div>
     );
 }

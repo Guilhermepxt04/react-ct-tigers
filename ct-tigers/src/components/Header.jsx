@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <nav className={style.nav}>
             <a href="#" className={style.logoLink} aria-label="Início" onClick={fecharMenu}>
-                <img className={style.logo} src="/logo.ico" alt="Logo da equipe Krav Maga Tigers" />
+                <img className={style.logo} src="/logo.ico" alt="Logo da equipe Krav Maga Tigers" width="48" height="48" />
             </a>
 
             <button

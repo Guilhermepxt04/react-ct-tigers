@@ -18,6 +18,7 @@ export default function Modalidades() {
             <div className={Style.cards}>
                 <CardProps
                     img={ImgKrav}
+                    altImg="Treino de Krav Maga no Centro de Treinamento Tigers"
                     titulo="Krav Maga"
                     texto="Sistema de defesa pessoal israelense, focado em situações reais de combate e autodefesa eficaz."
                     lista1="Autodefesa prática"
@@ -27,6 +28,7 @@ export default function Modalidades() {
 
                 <CardProps
                     img={ImgMuay}
+                    altImg="Luvas de Muay Thai para treino"
                     titulo="Muay Thai"
                     texto="Arte marcial tailandesa conhecida como 'a arte das oito armas', combinando técnicas de striking devastadoras."
                     lista1="Resistência cardiovascular"
@@ -36,6 +38,7 @@ export default function Modalidades() {
 
                 <CardProps
                     img={ImgBoxe}
+                    altImg="Treino de boxe com foco em técnica e agilidade"
                     titulo="Boxe"
                     texto="A 'nobre arte' focada na técnica de punhos, agilidade de pés e esquivas precisas para ataque e defesa."
                     lista1="Defesa e esquiva"
@@ -45,6 +48,7 @@ export default function Modalidades() {
 
                 <CardProps
                     img={ImgPersonal}
+                    altImg="Personal training com acompanhamento individual"
                     titulo="Personal Training"
                     texto="Treino personalizado e individualizado para atingir seus objetivos específicos com acompanhamento profissional."
                     lista1="Plano personalizado"
