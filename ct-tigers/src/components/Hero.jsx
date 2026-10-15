@@ -23,7 +23,7 @@ export default function Hero() {
                     Centro de treinamento
                     <span>Tigers</span>
                 </h1>
-                <p>Krav Maga, Muay Thai, Boxe e Personal Training em Guaianases, com turmas para adultos e crianças. A primeira aula é grátis.</p>
+                <p>Krav Maga, Muay Thai, Boxe e Personal Training em Guaianases, em um ambiente de família. A primeira aula é grátis e não precisa ter experiência.</p>
 
                 <div className={Style.botoes}>
                     <a href={WHATSAPP_URL} className="btn" target="_blank" rel="noopener noreferrer">Agendar aula grátis</a>

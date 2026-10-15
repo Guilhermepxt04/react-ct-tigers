@@ -21,7 +21,8 @@
     text-transform: uppercase;
     color: #fff;
     font-size: clamp(3rem, 10vw, 8.5rem);
-    line-height: .9;
+    /* a Anton tem acentos altos: entrelinha aberta para o É e o Á não encostarem na linha de cima */
+    line-height: 1.2;
     text-shadow: 0 4px 24px rgba(0, 0, 0, .25);
 }
 

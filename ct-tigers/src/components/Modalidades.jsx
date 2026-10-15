@@ -59,7 +59,7 @@ export default function Modalidades() {
             </div>
 
             <Reveal className={Style.fecho}>
-                <p>Não sabe qual escolher? Faça a primeira aula grátis e decida depois.</p>
+                <p>Não sabe qual escolher? Faça a primeira aula grátis e decida depois. As turmas recebem iniciantes.</p>
                 <a
                     className="btn"
                     href={WHATSAPP_URL}
