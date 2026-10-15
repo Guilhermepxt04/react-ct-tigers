@@ -95,3 +95,16 @@
         margin-top: 0;
     }
 }
+
+/* em telas estreitas a modalidade vai para baixo do horário, alinhada à esquerda,
+   e o lado direito fica livre para o botão flutuante do WhatsApp */
+@media (max-width: 480px) {
+    .grupo li {
+        flex-direction: column;
+        gap: .25rem;
+    }
+
+    .modalidade {
+        text-align: left;
+    }
+}

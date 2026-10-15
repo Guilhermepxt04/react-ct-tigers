@@ -36,7 +36,8 @@
     transition: background-size .3s ease;
 }
 
-.menuNav a:hover {
+.menuNav a:hover,
+.menuNav a[aria-current] {
     background-size: 100% 3px;
 }
 
@@ -50,6 +51,11 @@
 .menuNav a.contato:hover {
     background: var(--red-press);
     transform: translateY(-2px);
+}
+
+.menuNav a.contato:active {
+    transform: scale(.97);
+    transition-duration: .08s;
 }
 
 .hamburger {

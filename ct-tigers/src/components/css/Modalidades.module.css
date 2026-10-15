@@ -1,5 +1,5 @@
 .planos {
-    background: var(--black);
+    background: var(--ink);
     color: #fff;
     padding: var(--respiro) var(--pad-x);
 }

@@ -33,6 +33,8 @@ export default function App() {
 
       e.preventDefault();
       alvo.scrollIntoView({ behavior, block: 'start' });
+      // o link de pular leva também o foco do teclado para o conteúdo
+      if (alvo.tabIndex === -1) alvo.focus({ preventScroll: true });
     };
 
     document.addEventListener('click', aoClicar);
@@ -41,9 +43,10 @@ export default function App() {
 
   return (
     <>
+      <a href="#conteudo" className="pular">Pular para o conteúdo</a>
       <Header />
 
-      <main>
+      <main id="conteudo" tabIndex={-1}>
         <Hero />
         <Marcelo />
         <Modalidades />

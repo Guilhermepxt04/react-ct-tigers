@@ -7,8 +7,16 @@ import { WHATSAPP_URL } from '../contato'
 // mesmo ponto de quebra do Header.module.css, onde o menu vira tela cheia
 const MENU_MOVEL = '(max-width: 1080px)';
 
+const LINKS = [
+    ['marcelo', 'Instrutor'],
+    ['modalidades', 'Modalidades'],
+    ['horarios', 'Horários'],
+    ['ondeEstamos', 'Onde estamos'],
+];
+
 export default function Header() {
     const [menuAberto, setMenuAberto] = useState(false);
+    const [secaoAtual, setSecaoAtual] = useState(null);
     const navRef = useRef(null);
     const botaoRef = useRef(null);
     const menuRef = useRef(null);
@@ -63,6 +71,18 @@ export default function Header() {
         };
     }, [menuAberto]);
 
+    // marca no menu a seção que está no meio da tela
+    useEffect(() => {
+        const secoes = LINKS.map(([id]) => document.getElementById(id)).filter(Boolean);
+        const visiveis = new Set();
+        const observador = new IntersectionObserver((entradas) => {
+            entradas.forEach((e) => (e.isIntersecting ? visiveis.add(e.target.id) : visiveis.delete(e.target.id)));
+            setSecaoAtual(LINKS.map(([id]) => id).find((id) => visiveis.has(id)) ?? null);
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        secoes.forEach((s) => observador.observe(s));
+        return () => observador.disconnect();
+    }, []);
+
     return (
         <header>
             <nav className={style.nav} ref={navRef} aria-label="Principal">
@@ -88,10 +108,16 @@ export default function Header() {
                     ref={menuRef}
                     className={`${style.menuNav} ${menuAberto ? style.menuAberto : ''}`}
                 >
-                    <a href="#marcelo" onClick={fecharMenu}>Instrutor</a>
-                    <a href="#modalidades" onClick={fecharMenu}>Modalidades</a>
-                    <a href="#horarios" onClick={fecharMenu}>Horários</a>
-                    <a href="#ondeEstamos" onClick={fecharMenu}>Onde estamos</a>
+                    {LINKS.map(([id, rotulo]) => (
+                        <a
+                            key={id}
+                            href={`#${id}`}
+                            onClick={fecharMenu}
+                            aria-current={secaoAtual === id ? 'location' : undefined}
+                        >
+                            {rotulo}
+                        </a>
+                    ))}
                     <a
                         className={style.contato}
                         href={WHATSAPP_URL}

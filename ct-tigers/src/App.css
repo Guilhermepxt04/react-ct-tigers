@@ -18,6 +18,8 @@
 
     /* fallback condensado próximo enquanto a Anton carrega */
     --display: 'Anton', 'Impact', 'Arial Narrow', sans-serif;
+    /* texto corrido: grotesca de linha esportiva; 600 marca listas e endereços, 700 títulos curtos e botões */
+    --body: 'Barlow', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
     --pad-x: clamp(20px, 6vw, 96px);
     /* altura do corte diagonal entre as seções */
     --cut: clamp(28px, 5vw, 80px);
@@ -37,10 +39,60 @@ html {
 }
 
 body {
-    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-family: var(--body);
+    font-size: 1.0625rem;
     background: var(--ink);
     color: #fff;
     -webkit-font-smoothing: antialiased;
+}
+
+/* textura de granulação bem leve sobre a página: tira o aspecto chapado do preto */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    pointer-events: none;
+    opacity: .07;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+h1, h2, h3 {
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+::selection {
+    background: var(--red);
+    color: #fff;
+}
+
+/* link para pular a navegação: aparece só ao receber foco pelo teclado */
+.pular {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 40;
+    padding: .8rem 1.2rem;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--text-ink);
+    font-weight: 600;
+    text-decoration: none;
+    transform: translateY(-160%);
+    transition: transform .2s ease;
+}
+
+.pular:focus {
+    transform: none;
+}
+
+main:focus {
+    outline: none;
 }
 
 main {
@@ -76,6 +128,7 @@ img {
     color: #fff;
     font-weight: 700;
     font-size: 1.05rem;
+    letter-spacing: .01em;
     text-decoration: none;
     transition: transform .25s ease, background .25s ease;
 }
@@ -83,6 +136,12 @@ img {
 .btn:hover {
     background: var(--red-press);
     transform: translateY(-3px);
+}
+
+/* resposta ao toque/clique: afunda um pouco */
+.btn:active {
+    transform: translateY(0) scale(.98);
+    transition-duration: .08s;
 }
 
 /* Entrada das seções ao rolar (controlada pelo Reveal.jsx) */
