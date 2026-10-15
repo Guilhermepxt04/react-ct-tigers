@@ -4,11 +4,17 @@ import Reveal from "./Reveal";
 
 const grade = [
     {
-        dia: "Terça e Quinta",
+        dia: "Segunda e Quarta",
         aulas: [
             { hora: "18:30 – 19:30", modalidade: "Boxe" },
             { hora: "19:30 – 20:30", modalidade: "Muay Thai Kids" },
             { hora: "20:30 – 21:30", modalidade: "Muay Thai" },
+        ],
+    },
+    {
+        dia: "Terça e Quinta",
+        aulas: [
+            { hora: "19:30 – 21:30", modalidade: "Krav Maga" },
         ],
     },
     {

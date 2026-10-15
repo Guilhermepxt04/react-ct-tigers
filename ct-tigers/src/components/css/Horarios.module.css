@@ -36,6 +36,11 @@
     align-items: start;
 }
 
+/* o grupo com mais aulas ocupa a coluna da esquerda; os outros dois empilham à direita */
+.grupo:first-child {
+    grid-row: span 2;
+}
+
 /* segunda coluna levemente deslocada para quebrar o alinhamento rígido */
 .grupo:nth-child(2) {
     margin-top: clamp(0px, 4vw, 3.5rem);
@@ -80,6 +85,10 @@
 @media (max-width: 800px) {
     .grade {
         grid-template-columns: 1fr;
+    }
+
+    .grupo:first-child {
+        grid-row: auto;
     }
 
     .grupo:nth-child(2) {
