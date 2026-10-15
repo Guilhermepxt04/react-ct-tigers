@@ -11,9 +11,9 @@ export default function Whatsapp() {
             className={Style.btWhatsApp}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Entre em contato pelo WhatsApp"
+            aria-label="Agende sua aula grátis pelo WhatsApp"
         >
-            <span className={Style.msg} aria-hidden="true">Entre em contato</span>
+            <span className={Style.msg} aria-hidden="true">Agende sua aula grátis</span>
             <img className={Style.whatsappIcon} sizes="60px" {...imagem(Icone)} alt="" />
         </a>
     )

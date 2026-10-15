@@ -21,17 +21,14 @@ export default function Marcelo() {
 
                 <div className={Style.texto}>
                     <h2>Quem é Marcelo Carvalho</h2>
-                    <p>
-                        Faixa preta de Krav Maga e Kick Boxing, Kruang azul de Muay Thai, instrutor de Boxe, Tonfa e lâminas. Especializado em defesa pessoal feminina e monitor nível 3 de Panantukam.
-                    </p>
-
-                    <h3>Principais graduações</h3>
+                    <h3>Formação</h3>
                     <ul>
                         <li>Faixa preta de Krav Maga</li>
                         <li>Faixa preta de Kick Boxing</li>
                         <li>Kruang azul de Muay Thai</li>
                         <li>Instrutor de Boxe, Tonfa e lâminas</li>
                         <li>Especializado em defesa pessoal feminina</li>
+                        <li>Monitor nível 3 de Panantukam</li>
                     </ul>
 
                     <a href="#modalidades" className="btn">Conheça as modalidades</a>

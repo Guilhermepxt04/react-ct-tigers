@@ -21,7 +21,7 @@ export default function Modalidades() {
                     img={ImgKrav}
                     altImg="Treino de Krav Maga no Centro de Treinamento Tigers"
                     titulo="Krav Maga"
-                    texto="Sistema de defesa pessoal israelense, focado em situações reais de combate e autodefesa eficaz."
+                    texto="Defesa pessoal criada em Israel para situações reais: como reagir a agarrões, socos e ameaças."
                     lista1="Autodefesa prática"
                     lista2="Condicionamento físico"
                     lista3="Confiança pessoal"
@@ -31,17 +31,17 @@ export default function Modalidades() {
                     img={ImgMuay}
                     altImg="Luvas de Muay Thai para treino"
                     titulo="Muay Thai"
-                    texto="Arte marcial tailandesa conhecida como 'a arte das oito armas', combinando técnicas de striking devastadoras."
+                    texto="A “arte das oito armas” da Tailândia: socos, chutes, joelhadas e cotoveladas, com muito trabalho de fôlego."
                     lista1="Resistência cardiovascular"
                     lista2="Disciplina"
-                    lista3="Técnica de striking"
+                    lista3="Técnica de golpes"
                 />
 
                 <CardProps
                     img={ImgBoxe}
                     altImg="Treino de boxe com foco em técnica e agilidade"
                     titulo="Boxe"
-                    texto="A 'nobre arte' focada na técnica de punhos, agilidade de pés e esquivas precisas para ataque e defesa."
+                    texto="A “nobre arte” dos punhos: socos, esquivas e trabalho de pernas para atacar e se defender."
                     lista1="Defesa e esquiva"
                     lista2="Agilidade e trabalho de pés"
                     lista3="Força e potência nos golpes"
@@ -51,15 +51,15 @@ export default function Modalidades() {
                     img={ImgPersonal}
                     altImg="Personal training com acompanhamento individual"
                     titulo="Personal Training"
-                    texto="Treino personalizado e individualizado para atingir seus objetivos específicos com acompanhamento profissional."
+                    texto="Aulas individuais montadas para o seu objetivo, no horário que couber na sua rotina. Atende também no Tatuapé e na Anália Franco."
                     lista1="Plano personalizado"
                     lista2="Atenção individual"
-                    lista3="Resultados rápidos"
+                    lista3="Horário flexível"
                 />
             </div>
 
             <Reveal className={Style.fecho}>
-                <p>Escolha a modalidade que combina com você e comece com uma aula gratuita.</p>
+                <p>Não sabe qual escolher? Faça a primeira aula grátis e decida depois.</p>
                 <a
                     className="btn"
                     href={WHATSAPP_URL}

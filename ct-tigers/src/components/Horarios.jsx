@@ -32,7 +32,7 @@ export default function Horarios() {
 
             <Reveal className={Style.intro}>
                 <h2>Nossos horários</h2>
-                <p>Faça uma aula experimental em qualquer modalidade. Se preferir, marque um personal no melhor horário para a sua rotina.</p>
+                <p>A aula experimental é grátis em qualquer turma. No personal, você escolhe o horário.</p>
             </Reveal>
 
             <Reveal className={Style.grade} delay={0.1}>

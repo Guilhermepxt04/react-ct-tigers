@@ -9,7 +9,7 @@ export default function OndeEstamos() {
 
                 <div className={Style.texto}>
                     <h2>Onde estamos</h2>
-                    <p>Nosso Centro de Treinamento Tigers fica na Zona Leste de São Paulo. Também atendemos com planos de personal no Tatuapé, Anália Franco e região.</p>
+                    <p>O Centro de Treinamento Tigers fica em Guaianases, na Zona Leste de São Paulo. O personal também atende no Tatuapé, na Anália Franco e região.</p>
                     <address>
                         Av. dos Bandeirantes, 236<br />
                         Guaianases, São Paulo - SP
