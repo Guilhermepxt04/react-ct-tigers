@@ -1,5 +1,5 @@
 .ondeEstamos {
-    background: #000;
+    background: var(--black);
     color: #fff;
     padding: var(--respiro) var(--pad-x);
 }
@@ -34,16 +34,25 @@
     max-width: 42ch;
     font-size: clamp(1.05rem, 1.8vw, 1.3rem);
     line-height: 1.6;
-    color: #d0d0d0;
+    color: var(--text-fog);
 }
 
 .texto address {
     font-style: normal;
     line-height: 1.6;
-    padding-left: 1rem;
-    border-left: 3px solid var(--red);
     color: #fff;
     font-weight: 600;
+}
+
+/* o mesmo traço inclinado das listas marca o endereço */
+.texto address::before {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 4px;
+    margin-bottom: .7rem;
+    background: var(--red);
+    transform: skewX(-30deg);
 }
 
 .mapa {

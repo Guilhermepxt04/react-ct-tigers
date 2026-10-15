@@ -37,7 +37,7 @@ export default function Footer() {
 
             <p className={Style.copy}>
                 Desde 2018 ensinando técnicas de autodefesa.<br />
-                &copy; 2025 Krav Maga Tigers. Todos os direitos reservados.
+                &copy; {new Date().getFullYear()} Krav Maga Tigers. Todos os direitos reservados.
             </p>
 
         </footer>

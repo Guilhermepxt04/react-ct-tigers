@@ -1,6 +1,6 @@
 .horarios {
     background: var(--paper);
-    color: #141414;
+    color: var(--text-ink);
     padding: var(--respiro) var(--pad-x);
 }
 
@@ -15,7 +15,7 @@
     font-weight: 400;
     text-align: left;
     text-transform: uppercase;
-    color: #141414;
+    color: var(--text-ink);
     font-size: clamp(2.6rem, 7vw, 6rem);
     line-height: .95;
 }
@@ -25,7 +25,7 @@
     margin-top: 1.2rem;
     font-size: clamp(1.05rem, 1.8vw, 1.35rem);
     line-height: 1.6;
-    color: #333;
+    color: var(--text-ink-soft);
 }
 
 .grade {
@@ -61,15 +61,11 @@
     gap: 1rem;
     padding: 1.1rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, .16);
-    transition: padding-left .3s ease;
-}
-
-.grupo li:hover {
-    padding-left: .8rem;
 }
 
 .hora {
     font-family: var(--display);
+    font-variant-numeric: tabular-nums;
     font-size: clamp(1.3rem, 2.6vw, 1.9rem);
     letter-spacing: .02em;
     white-space: nowrap;

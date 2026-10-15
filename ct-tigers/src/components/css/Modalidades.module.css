@@ -1,5 +1,5 @@
 .planos {
-    background: #000;
+    background: var(--black);
     color: #fff;
     padding: var(--respiro) var(--pad-x);
 }
@@ -75,7 +75,7 @@
     max-width: 44ch;
     font-size: 1.05rem;
     line-height: 1.65;
-    color: #cfcfcf;
+    color: var(--text-fog);
 }
 
 .cardConteudo ul {

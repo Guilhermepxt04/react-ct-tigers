@@ -1,15 +1,23 @@
-@font-face {
-    font-family: 'Impact';
-    src: url(assets/fonts/IMPACT.woff2);
-    font-display: swap;
-}
-
 :root {
+    /* vermelho da marca: textos grandes e detalhes */
     --red: #EB1C24;
-    --red-hot: #ff2f36;
+    /* superfícies com texto branco e texto vermelho em fundo claro (AA ≥ 4.5:1) */
+    --red-fill: #D61920;
+    --red-deep: #C9131A;
+    --red-press: #B5121A;
+
+    --black: #000;
     --ink: #080808;
+    --ink-deep: #050505;
     --paper: #f1eeea;
-    --display: 'Impact', 'Arial Narrow', sans-serif;
+    /* textos sobre o papel */
+    --text-ink: #141414;
+    --text-ink-soft: #333;
+    /* textos secundários sobre o preto */
+    --text-fog: #cfcfcf;
+
+    /* fallback condensado próximo enquanto a Anton carrega */
+    --display: 'Anton', 'Impact', 'Arial Narrow', sans-serif;
     --pad-x: clamp(20px, 6vw, 96px);
     /* altura do corte diagonal entre as seções */
     --cut: clamp(28px, 5vw, 80px);
@@ -23,8 +31,8 @@
     box-sizing: border-box;
 }
 
+/* a rolagem suave dos links fica no App.jsx, que respeita reduced-motion */
 html {
-    scroll-behavior: smooth;
     scroll-padding-top: 70px;
 }
 
@@ -64,7 +72,7 @@ img {
     width: fit-content;
     padding: 1rem 2rem;
     border-radius: 999px;
-    background: var(--red);
+    background: var(--red-fill);
     color: #fff;
     font-weight: 700;
     font-size: 1.05rem;
@@ -73,7 +81,7 @@ img {
 }
 
 .btn:hover {
-    background: var(--red-hot);
+    background: var(--red-press);
     transform: translateY(-3px);
 }
 
@@ -90,7 +98,7 @@ img {
 }
 
 :focus-visible {
-    outline: 3px solid var(--red-hot);
+    outline: 3px solid var(--red);
     outline-offset: 4px;
 }
 

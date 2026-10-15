@@ -41,14 +41,14 @@
 }
 
 .menuNav a.contato {
-    background: var(--red);
+    background: var(--red-fill);
     padding: .6rem 1.3rem;
     border-radius: 999px;
     transition: background .25s ease, transform .25s ease;
 }
 
 .menuNav a.contato:hover {
-    background: var(--red-hot);
+    background: var(--red-press);
     transform: translateY(-2px);
 }
 
@@ -112,9 +112,11 @@
         z-index: 21;
     }
 
+    /* visibility troca na hora ao abrir, para o foco poder entrar no primeiro link */
     .menuAberto {
         opacity: 1;
         visibility: visible;
+        transition: opacity .3s ease, visibility 0s;
     }
 
     .menuNav a {

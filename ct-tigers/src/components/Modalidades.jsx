@@ -6,6 +6,7 @@ import ImgKrav from '../assets/img/krav.webp?w=480;800;1280&format=webp&quality=
 import ImgBoxe from '../assets/img/boxe.webp?w=480;800;1280&format=webp&quality=75&as=metadata'
 import CardProps from "./CardProps";
 import Reveal from "./Reveal";
+import { WHATSAPP_URL } from "../contato";
 
 export default function Modalidades() {
     return (
@@ -61,7 +62,7 @@ export default function Modalidades() {
                 <p>Escolha a modalidade que combina com você e comece com uma aula gratuita.</p>
                 <a
                     className="btn"
-                    href="https://api.whatsapp.com/send?phone=5511953997087&text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20as%20aulas"
+                    href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                 >

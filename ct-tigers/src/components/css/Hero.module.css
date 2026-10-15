@@ -7,7 +7,7 @@
     min-height: 100svh;
     padding: 130px var(--pad-x) calc(var(--cut) + 70px);
     color: #fff;
-    background: #000;
+    background: var(--black);
 }
 
 /* imagem do banner (antes era background-image: agora o navegador a descobre cedo) */
@@ -96,7 +96,7 @@
 }
 
 .link:hover {
-    color: var(--red-hot);
+    color: var(--red);
 }
 
 @media (max-width: 900px) {

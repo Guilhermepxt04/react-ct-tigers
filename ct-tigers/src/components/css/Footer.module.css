@@ -1,5 +1,5 @@
 .footer {
-    background: #050505;
+    background: var(--ink-deep);
     color: #fff;
     padding: calc(var(--cut) + 3rem) var(--pad-x) 2rem;
 }
@@ -35,7 +35,7 @@
 }
 
 .bloco address a:hover {
-    color: var(--red-hot);
+    color: var(--red);
 }
 
 .redes {
@@ -64,4 +64,10 @@
     font-size: .85rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, .6);
+}
+/* deixa a última linha livre do botão flutuante do WhatsApp */
+@media (max-width: 768px) {
+    .footer {
+        padding-bottom: 6rem;
+    }
 }

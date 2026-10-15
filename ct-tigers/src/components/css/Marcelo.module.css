@@ -1,6 +1,6 @@
 .marcelo {
     background: var(--paper);
-    color: #141414;
+    color: var(--text-ink);
     padding: var(--respiro) var(--pad-x);
 }
 
@@ -39,19 +39,19 @@
     text-transform: uppercase;
     font-size: clamp(2.2rem, 4.8vw, 4rem);
     line-height: 1;
-    color: #141414;
+    color: var(--text-ink);
 }
 
 .texto p {
     max-width: 52ch;
     font-size: 1.1rem;
     line-height: 1.7;
-    color: #333;
+    color: var(--text-ink-soft);
 }
 
 .texto h3 {
     font-size: 1.1rem;
-    color: var(--red);
+    color: var(--red-deep);
 }
 
 .texto ul {
@@ -66,7 +66,7 @@
     align-items: center;
     gap: .6rem;
     font-weight: 600;
-    color: #141414;
+    color: var(--text-ink);
 }
 
 .texto li::before {
