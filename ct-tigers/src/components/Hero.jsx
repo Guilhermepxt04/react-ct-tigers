@@ -19,7 +19,7 @@ export default function Hero() {
 
             <div className={Style.conteudo}>
                 <h1>
-                    Centro de treinamento Krav Maga
+                    Centro de treinamento
                     <span>Tigers</span>
                 </h1>
                 <p>Krav Maga, Muay Thai, Personal Training e outras artes em um ambiente de família e profissional.</p>
