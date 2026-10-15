@@ -1,7 +1,8 @@
 import React from "react";
 import Style from '../components/css/Footer.module.css'
-import Tiktok from '../assets/img/logo-tiktok.webp'
-import Instagram from '../assets/img/logo-instagram.webp'
+import Tiktok from '../assets/img/logo-tiktok.webp?w=44;88&format=webp&as=metadata'
+import Instagram from '../assets/img/logo-instagram.webp?w=44;88&format=webp&as=metadata'
+import { imagem } from './imagem'
 
 export default function Footer() {
     return (
@@ -24,10 +25,10 @@ export default function Footer() {
                     <h2>Redes sociais</h2>
                     <div className={Style.redes}>
                         <a href="https://www.instagram.com/kravmaga_instrutormarcelo?igsh=bXNuajh4bGVhc2hy" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <img src={Instagram} alt="Instagram" />
+                            <img sizes="44px" {...imagem(Instagram)} alt="Instagram" loading="lazy" />
                         </a>
                         <a href="https://www.tiktok.com/@marcelocarvalho_tigers?_t=ZM-8wctvLMslRY&_r=1" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                            <img src={Tiktok} alt="TikTok" />
+                            <img sizes="44px" {...imagem(Tiktok)} alt="TikTok" loading="lazy" />
                         </a>
                     </div>
                 </div>

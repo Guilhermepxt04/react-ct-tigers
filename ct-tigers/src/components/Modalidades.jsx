@@ -1,9 +1,9 @@
 import React from "react";
 import Style from '../components/css/Modalidades.module.css'
-import ImgMuay from '../assets/img/luvas-muaythai.webp'
-import ImgPersonal from '../assets/img/personal.webp'
-import ImgKrav from '../assets/img/krav.webp'
-import ImgBoxe from '../assets/img/boxe.webp'
+import ImgMuay from '../assets/img/luvas-muaythai.webp?w=480;800;1280&format=webp&quality=75&as=metadata'
+import ImgPersonal from '../assets/img/personal.webp?w=480;800;1280&format=webp&quality=75&as=metadata'
+import ImgKrav from '../assets/img/krav.webp?w=480;800;1280&format=webp&quality=75&as=metadata'
+import ImgBoxe from '../assets/img/boxe.webp?w=480;800;1280&format=webp&quality=75&as=metadata'
 import CardProps from "./CardProps";
 import Reveal from "./Reveal";
 

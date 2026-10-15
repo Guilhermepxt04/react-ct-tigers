@@ -1,6 +1,7 @@
 import React from 'react'
 import Style from '../components/css/Marcelo.module.css'
-import Image from '../assets/img/marcelo.webp'
+import Foto from '../assets/img/marcelo.webp?w=480;720;928&format=webp&quality=78&as=metadata'
+import { imagem } from './imagem'
 import Reveal from './Reveal'
 
 export default function Marcelo() {
@@ -9,7 +10,13 @@ export default function Marcelo() {
             <Reveal className={Style.container}>
 
                 <div className={Style.imagem}>
-                    <img src={Image} alt="Instrutor Marcelo Carvalho" loading="lazy" />
+                    <img
+                        sizes="(max-width: 860px) min(560px, calc(100vw - 40px)), 545px"
+                        {...imagem(Foto)}
+                        alt="Instrutor Marcelo Carvalho"
+                        loading="lazy"
+                        decoding="async"
+                    />
                 </div>
 
                 <div className={Style.texto}>

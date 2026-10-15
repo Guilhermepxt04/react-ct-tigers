@@ -77,6 +77,18 @@ img {
     transform: translateY(-3px);
 }
 
+/* Entrada das seções ao rolar (controlada pelo Reveal.jsx) */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity .7s cubic-bezier(.2, .7, .2, 1), transform .7s cubic-bezier(.2, .7, .2, 1);
+}
+
+.reveal.revelado {
+    opacity: 1;
+    transform: none;
+}
+
 :focus-visible {
     outline: 3px solid var(--red-hot);
     outline-offset: 4px;
@@ -86,5 +98,10 @@ img {
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation: none !important;
+    }
+
+    /* mantém só o fade, sem deslocamento */
+    .reveal {
+        transform: none;
     }
 }

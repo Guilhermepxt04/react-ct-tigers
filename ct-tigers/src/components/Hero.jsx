@@ -1,13 +1,17 @@
 import React from "react";
 import Style from '../components/css/Hero.module.css';
-import Banner from '../assets/img/marcelo-banner.webp';
+import Banner from '../assets/img/marcelo-banner.webp?w=960;1440&format=webp&quality=78&as=metadata';
+import { imagem } from './imagem';
+
+const banner = imagem(Banner);
 
 export default function Hero() {
     return (
         <section className={Style.hero}>
             <img
                 className={Style.fundo}
-                src={Banner}
+                sizes="(max-width: 900px) 135vh, 100vw"
+                {...banner}
                 alt=""
                 fetchPriority="high"
                 decoding="async"

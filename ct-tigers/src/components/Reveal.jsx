@@ -1,17 +1,36 @@
-import React from "react";
-import { m as M } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 
-// Usa o componente leve "m" (precisa do LazyMotion no App.jsx)
-export default function Reveal({ children, delay = 0, className }) {
+// Mostra o conteúdo subindo quando ele entra na tela (IntersectionObserver + transição CSS em App.css).
+// Observa uma única vez e desconecta, então não fica nenhum custo depois da animação.
+export default function Reveal({ children, delay = 0, className = '' }) {
+    const ref = useRef(null);
+    const [visivel, setVisivel] = useState(false);
+
+    useEffect(() => {
+        const el = ref.current;
+        if (!el || !('IntersectionObserver' in window)) {
+            setVisivel(true);
+            return;
+        }
+
+        const observador = new IntersectionObserver(([entrada]) => {
+            if (entrada.isIntersecting) {
+                setVisivel(true);
+                observador.disconnect();
+            }
+        }, { threshold: 0.2 });
+
+        observador.observe(el);
+        return () => observador.disconnect();
+    }, []);
+
     return (
-        <M.div
-            className={className}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, delay, ease: [0.2, 0.7, 0.2, 1] }}
+        <div
+            ref={ref}
+            className={`reveal ${visivel ? 'revelado' : ''} ${className}`}
+            style={delay ? { transitionDelay: `${delay}s` } : undefined}
         >
             {children}
-        </M.div>
+        </div>
     );
 }
